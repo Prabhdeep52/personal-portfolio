@@ -43,6 +43,7 @@ export default function TerminalPortfolio() {
   const fullRoleText = "Full Stack and App Developer"
 
   const commands = [
+    { cmd: "resume", section: "about", desc: "My resume", icon: User },
     { cmd: "who_am_i", section: "about", desc: "My information ", icon: User },
     { cmd: "ls projects/", section: "projects", desc: "Project repositories", icon: FolderOpen },
     { cmd: "ls skills/", section: "skills", desc: "Show technical skills", icon: Settings },
@@ -52,6 +53,9 @@ export default function TerminalPortfolio() {
   ]
 
   // Quick command buttons for easy access
+
+
+
   const quickCommands = [
     {
       cmd: "who_am_i",
@@ -84,6 +88,26 @@ export default function TerminalPortfolio() {
   ]
 
   const projects = [
+       {
+      name:"StreamForge",
+      description:"A distributed Event Streaming pipeline build using Go , Kafka , PostgreSQL ",
+      language:"Golang",
+      stars:0,
+      forks:0,
+      topics:["Golang" , "Kafka" , "PostgreSQL"],
+      link:"https://github.com/Prabhdeep52/StreamForge", 
+      image:"../assets/streamforge.png"
+    },
+    {
+      name:"ContextFlow", 
+      description:" Advanced RAG system with hierarchical document processing with precise source attribution. ",
+      language:"Python",
+      stars:0,
+      forks:0,
+      topics:["Python","Langchain" , "RAG","Hierarchical Retrieval"],
+      link:"https://github.com/Prabhdeep52/ContextFlow",
+      image:"../assets/rag.png"
+    },
     {
       name: "multiplayer_scribble_game",
       description:
@@ -93,6 +117,7 @@ export default function TerminalPortfolio() {
       forks: 0,
       topics: ["flutter", "websockets", "realtime", "multiplayer"],
       link: "https://github.com/Prabhdeep52/multiplayer_scribble_game",
+      image: "../assets/scribble.png",
     },
     {
       name: "ResQ-Connect",
@@ -103,6 +128,8 @@ export default function TerminalPortfolio() {
       forks: 0,
       topics: ["flutter", "sockets", "disaster-relief", "realtime"],
       link: "https://github.com/Prabhdeep52/ResQ-Connect",
+      image: "../assets/resq.png",
+      imageAlt: "ResQ-Connect",
     },
     {
       name: "Aurora",
@@ -113,6 +140,7 @@ export default function TerminalPortfolio() {
       forks: 0,
       topics: ["flutter", "accessibility", "voice", "navigation"],
       link: "https://github.com/Prabhdeep52/Aurora",
+      image: "none",
     },
     {
       name: "goBank",
@@ -123,11 +151,13 @@ export default function TerminalPortfolio() {
       forks: 0,
       topics: ["golang", "api", "jwt", "banking", "postgresql"],
       link: "https://github.com/Prabhdeep52/goBank",
+      image: "none",
     },
+ 
   ]
 
   const skills = {
-    languages: ["C/C++", "Dart", "Go", "JavaScript", "Python", "Java", "TypeScript"],
+    languages: ["Golang" ,"C/C++", "Dart","JavaScript", "Python", "Java", "TypeScript"],
     frameworks: ["Flutter", "Express", "Gorilla Mux", "React", "Next.js"],
     tools: ["PostgreSQL", "Redis", "Docker", "Git", "Socket.IO", "WebSockets", "AWS", "Firebase"],
     concepts: ["Data Structures and Algorithm", "JWT Authentication"],
@@ -221,13 +251,6 @@ export default function TerminalPortfolio() {
         return (
           <div className="space-y-4">
             <div className="text-green-400">
-              <pre className="text-xs sm:text-sm overflow-x-auto">
-                {`
-    ╭─────────────────────────────────────╮
-    │           SYSTEM INFO               │
-    ╰─────────────────────────────────────╯
-`}
-              </pre>
             </div>
             <div className="space-y-2 text-xs sm:text-sm">
               <div className="break-words">
@@ -241,19 +264,31 @@ export default function TerminalPortfolio() {
                 <span className="text-cyan-400">Location:</span> <span className="text-white">India</span>
               </div>
               <div className="break-words">
+                <span className="text-cyan-400">Education:</span>{" "}
+                <span className="text-gray-300 ">
+                   Btech in Electronics and Computer Engineering from VIT Chennai.
+                </span>
+              </div>
+              <div className="break-words">
                 <span className="text-cyan-400">Status:</span>{" "}
                 <span className="text-green-400">Available for hire</span>
               </div>
-              <div className="mt-4">
-                <span className="text-cyan-400">Bio:</span>
-                <div className="text-gray-300 mt-2 leading-relaxed text-xs sm:text-sm">
-                  Passionate full-stack and app developer with expertise in building scalable web and mobile
-                  applications. I love working with modern technologies and contributing to open-source projects.
-                  Currently focused on AI/ML integration and cross-platform development.
-                </div>
               </div>
+                      <Button
+          variant="outline"
+          size="sm"
+          onClick={() =>
+            window.open(
+              "https://drive.google.com/file/d/13mgeYjNxKuZnUVhnnXyYeTjzBfci8kOS/view?usp=sharing/",
+              "_blank"
+            )
+          }
+          className="text-red-400 border-red-400/50 hover:bg-red-400/10 bg-transparent border transition-all duration-200 hover:scale-105 text-xs sm:text-sm font-mono group"
+        >
+          Click to download Resume
+        </Button>
             </div>
-          </div>
+       
         )
 
       case "projects":
@@ -262,13 +297,23 @@ export default function TerminalPortfolio() {
             <div className="text-green-400 text-xs sm:text-sm">
               <span className="text-cyan-400">total</span> {projects.length} repositories
             </div>
-            <div className="grid gap-3 sm:gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
               {projects.map((project, index) => (
                 <Card
                   key={index}
                   className="bg-gray-800/50 border-gray-700 hover:border-green-400/50 transition-colors"
                 >
                   <CardContent className="p-3 sm:p-4">
+                    {project.image !== "none" && (
+                      <div className="mb-4">
+                        <img
+                          src={project.image || "/placeholder.svg"}
+                          alt={`${project.name} preview`}
+                          className="w-full h-32 sm:h-40 object-cover rounded-lg border border-gray-600"
+                        />
+                      </div>
+                    )}
+
                     <div className="flex items-start justify-between mb-2 gap-2">
                       <div className="flex items-center gap-2 min-w-0 flex-1">
                         <Folder className="w-3 h-3 sm:w-4 sm:h-4 text-blue-400 flex-shrink-0" />
@@ -483,6 +528,7 @@ export default function TerminalPortfolio() {
             </div>
           </div>
         )
+  
 
       default:
         return null
@@ -534,7 +580,7 @@ export default function TerminalPortfolio() {
             <pre
               className="sm:hidden text-center"
               style={{
-                fontSize: "clamp(3px, 2.5vw, 10px)",
+                fontSize: "clamp(6px, 2.5vw, 10px)",
                 lineHeight: 1.1,
               }}
             >
@@ -555,7 +601,8 @@ export default function TerminalPortfolio() {
             </div>
           </div>
           <div className="text-gray-300 text-xs sm:text-sm">
-            Welcome to my terminal portfolio. Type a command or click on the options below.
+            Myself Prabhdeep , a Passionate Full Stack and App Developer with a knack for building scalable backend systems and APIs. 
+            Welcome to my portfolio and type any command or click on Quick Links below to know more about me. 
           </div>
         </div>
 
@@ -653,6 +700,17 @@ export default function TerminalPortfolio() {
               <HelpCircle className="w-3 h-3 mr-1" />
               help
             </Button>
+            <span className="text-gray-600 mx-2">|</span>
+
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => window.open("https://drive.google.com/file/d/13mgeYjNxKuZnUVhnnXyYeTjzBfci8kOS/view?usp=sharing/", "_blank")}
+              className="text-gray-400 hover:text-red-400 hover:bg-red-400/10 text-xs font-mono transition-colors"
+            >
+              <Terminal className="w-3 h-3 mr-1" />
+              Resume
+            </Button>
           </div>
         </div>
 
@@ -673,6 +731,7 @@ export default function TerminalPortfolio() {
         {/* Footer */}
         <div className="mt-6 sm:mt-8 text-center text-gray-500 text-xs">
           <div>Last login: {new Date().toLocaleString()}</div>
+          <div className="mt-2">Built with Next.js • Styled with Tailwind CSS</div>
         </div>
       </div>
     </div>
