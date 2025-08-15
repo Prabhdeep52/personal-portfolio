@@ -88,25 +88,25 @@ export default function TerminalPortfolio() {
   ]
 
   const projects = [
-       {
-      name:"StreamForge",
-      description:"A distributed Event Streaming pipeline build using Go , Kafka , PostgreSQL ",
-      language:"Golang",
-      stars:0,
-      forks:0,
-      topics:["Golang" , "Kafka" , "PostgreSQL"],
-      link:"https://github.com/Prabhdeep52/StreamForge", 
-      image:"../assets/streamforge.png"
+    {
+      name: "StreamForge",
+      description: "A distributed Event Streaming pipeline build using Go , Kafka , PostgreSQL ",
+      language: "Golang",
+      stars: 0,
+      forks: 0,
+      topics: ["Golang", "Kafka", "PostgreSQL"],
+      link: "https://github.com/Prabhdeep52/StreamForge",
+      image: "../assets/streamforge.png"
     },
     {
-      name:"ContextFlow", 
-      description:" Advanced RAG system with hierarchical document processing with precise source attribution. ",
-      language:"Python",
-      stars:0,
-      forks:0,
-      topics:["Python","Langchain" , "RAG","Hierarchical Retrieval"],
-      link:"https://github.com/Prabhdeep52/ContextFlow",
-      image:"../assets/rag.png"
+      name: "ContextFlow",
+      description: " Advanced RAG system with hierarchical document processing with precise source attribution. ",
+      language: "Python",
+      stars: 0,
+      forks: 0,
+      topics: ["Python", "Langchain", "RAG", "Hierarchical Retrieval"],
+      link: "https://github.com/Prabhdeep52/ContextFlow",
+      image: "../assets/rag.png"
     },
     {
       name: "multiplayer_scribble_game",
@@ -153,11 +153,11 @@ export default function TerminalPortfolio() {
       link: "https://github.com/Prabhdeep52/goBank",
       image: "none",
     },
- 
+
   ]
 
   const skills = {
-    languages: ["Golang" ,"C/C++", "Dart","JavaScript", "Python", "Java", "TypeScript"],
+    languages: ["Golang", "C/C++", "Dart", "JavaScript", "Python", "Java", "TypeScript"],
     frameworks: ["Flutter", "Express", "Gorilla Mux", "React", "Next.js"],
     tools: ["PostgreSQL", "Redis", "Docker", "Git", "Socket.IO", "WebSockets", "AWS", "Firebase"],
     concepts: ["Data Structures and Algorithm", "JWT Authentication"],
@@ -266,29 +266,29 @@ export default function TerminalPortfolio() {
               <div className="break-words">
                 <span className="text-cyan-400">Education:</span>{" "}
                 <span className="text-gray-300 ">
-                   Btech in Electronics and Computer Engineering from VIT Chennai.
+                  Btech in Electronics and Computer Engineering from VIT Chennai.
                 </span>
               </div>
               <div className="break-words">
                 <span className="text-cyan-400">Status:</span>{" "}
                 <span className="text-green-400">Available for hire</span>
               </div>
-              </div>
-                      <Button
-          variant="outline"
-          size="sm"
-          onClick={() =>
-            window.open(
-              "https://drive.google.com/file/d/13mgeYjNxKuZnUVhnnXyYeTjzBfci8kOS/view?usp=sharing/",
-              "_blank"
-            )
-          }
-          className="text-red-400 border-red-400/50 hover:bg-red-400/10 bg-transparent border transition-all duration-200 hover:scale-105 text-xs sm:text-sm font-mono group"
-        >
-          Click to download Resume
-        </Button>
             </div>
-       
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() =>
+                window.open(
+                  "https://drive.google.com/file/d/13mgeYjNxKuZnUVhnnXyYeTjzBfci8kOS/view?usp=sharing/",
+                  "_blank"
+                )
+              }
+              className="text-red-400 border-red-400/50 hover:bg-red-400/10 bg-transparent border transition-all duration-200 hover:scale-105 text-xs sm:text-sm font-mono group"
+            >
+              Click to download Resume
+            </Button>
+          </div>
+
         )
 
       case "projects":
@@ -342,15 +342,14 @@ export default function TerminalPortfolio() {
                       <div className="flex items-center gap-3 sm:gap-4 text-xs text-gray-400">
                         <div className="flex items-center gap-1">
                           <div
-                            className={`w-2 h-2 rounded-full ${
-                              project.language === "Python"
+                            className={`w-2 h-2 rounded-full ${project.language === "Python"
                                 ? "bg-blue-500"
                                 : project.language === "TypeScript"
                                   ? "bg-blue-600"
                                   : project.language === "JavaScript"
                                     ? "bg-yellow-500"
                                     : "bg-cyan-500"
-                            }`}
+                              }`}
                           />
                           <span className="text-xs">{project.language}</span>
                         </div>
@@ -528,7 +527,7 @@ export default function TerminalPortfolio() {
             </div>
           </div>
         )
-  
+
 
       default:
         return null
@@ -601,8 +600,8 @@ export default function TerminalPortfolio() {
             </div>
           </div>
           <div className="text-gray-300 text-xs sm:text-sm">
-            Myself Prabhdeep , a Passionate Full Stack and App Developer with a knack for building scalable backend systems and APIs. 
-            Welcome to my portfolio and type any command or click on Quick Links below to know more about me. 
+            Myself Prabhdeep , a Passionate Full Stack and App Developer with a knack for building scalable backend systems and APIs.
+            Welcome to my portfolio and type any command or click on Quick Links below to know more about me.
           </div>
         </div>
 
@@ -634,11 +633,10 @@ export default function TerminalPortfolio() {
                 {filteredCommands.map((command, index) => (
                   <div
                     key={index}
-                    className={`flex items-center gap-3 px-3 py-2 cursor-pointer transition-colors ${
-                      index === selectedSuggestion
+                    className={`flex items-center gap-3 px-3 py-2 cursor-pointer transition-colors ${index === selectedSuggestion
                         ? "bg-green-400/20 text-green-400"
                         : "text-gray-300 hover:bg-gray-700/50"
-                    }`}
+                      }`}
                     onClick={() => executeCommand(command.section)}
                   >
                     <ChevronRight className="w-3 h-3 text-cyan-400" />
@@ -728,11 +726,6 @@ export default function TerminalPortfolio() {
           </div>
         )}
 
-        {/* Footer */}
-        <div className="mt-6 sm:mt-8 text-center text-gray-500 text-xs">
-          <div>Last login: {new Date().toLocaleString()}</div>
-          <div className="mt-2">Built with Next.js • Styled with Tailwind CSS</div>
-        </div>
       </div>
     </div>
   )
