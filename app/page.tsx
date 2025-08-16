@@ -117,7 +117,7 @@ export default function TerminalPortfolio() {
       forks: 0,
       topics: ["flutter", "websockets", "realtime", "multiplayer"],
       link: "https://github.com/Prabhdeep52/multiplayer_scribble_game",
-      image: "../assets/scribble.png",
+      image: "../assets/scribble2.png",
     },
     {
       name: "ResQ-Connect",
