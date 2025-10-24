@@ -16,7 +16,6 @@ import GitHubContributionsPage from "@/components/canvas";
 
 // ----------- Portfolio Component -----------
 export default function MinimalPortfolio() {
-  const [data, setData] = useState<ContributionData | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const [expandedProject, setExpandedProject] = useState<string | null>(null);
