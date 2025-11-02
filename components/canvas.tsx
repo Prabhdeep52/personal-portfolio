@@ -76,7 +76,7 @@ const GitHubContributionsChart: NextPage = () => {
         const cropTop = 90;
         const cropBottom = 30;
         const cropLeft = 20;
-        const cropRight = 150;
+        const cropRight = 120;
 
         const sx = cropLeft;
         const sy = cropTop;

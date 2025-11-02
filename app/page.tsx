@@ -234,7 +234,7 @@ export default function MinimalPortfolio() {
         </a>
 
         {/* Skills */}
-        <section id="skills" className="mb-15 mt-15 space-y-8">
+        <section id="skills" className="mb-12 mt-12 space-y-8">
           <h2 className="text-2xl text-white italic font-light">skills</h2>
           <div className="space-y-1 text-zinc-400">
             <div>languages: {skills.languages.join(", ")}</div>
