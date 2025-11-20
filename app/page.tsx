@@ -13,6 +13,7 @@ import {
   ChevronDown,
 } from "lucide-react";
 import GitHubContributionsPage from "@/components/canvas";
+import GithubChart from "@/components/newGithubChart";
 
 // ----------- Portfolio Component -----------
 export default function MinimalPortfolio() {
@@ -223,15 +224,17 @@ export default function MinimalPortfolio() {
         </section>
 
         {/* GitHub Contributions */}
-        <a
+        {/*<a
           href="https://github.com/Prabhdeep52"
           target="_blank"
           rel="noopener noreferrer"
           className="block transition-transform duration-300 hover:scale-[1.01] hover:opacity-90"
           title="View my GitHub profile"
         >
-          <GitHubContributionsPage />
-        </a>
+         // <GitHubContributionsPage />
+        </a>*/}
+
+        <GithubChart />
 
         {/* Skills */}
         <section id="skills" className="mb-12 mt-12 space-y-8">
