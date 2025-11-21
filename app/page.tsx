@@ -234,8 +234,6 @@ export default function MinimalPortfolio() {
          // <GitHubContributionsPage />
         </a>*/}
 
-        <GithubChart />
-
         {/* Skills */}
         <section id="skills" className="mb-12 mt-12 space-y-8">
           <h2 className="text-2xl text-white italic font-light">skills</h2>
@@ -326,7 +324,7 @@ export default function MinimalPortfolio() {
             </div>
           )}
         </section>
-
+        <GithubChart />
         {/* Contact */}
         <section
           id="contact"
